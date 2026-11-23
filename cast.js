@@ -48,7 +48,7 @@ const PEOPLE={
   "future": "Вы оставляете в расписании время, которое не нужно заслуживать.",
   "place": "Больничный сад",
   "trait": "empathy",
-  "image": "nikita.png",
+  "image": "nikita.jpg",
   "trust": "t_nikita"
  },
  "mark": {
@@ -61,7 +61,7 @@ const PEOPLE={
   "future": "Вы спорите без страха, что любой разговор превратится в суд.",
   "place": "Старая набережная",
   "trait": "courage",
-  "image": "mark.png",
+  "image": "mark.jpg",
   "trust": "t_mark"
  },
  "roman": {
@@ -74,7 +74,7 @@ const PEOPLE={
   "future": "Он играет дома незаконченную мелодию и больше не стыдится ошибки.",
   "place": "Репетиционный зал",
   "trait": "empathy",
-  "image": "roman.png",
+  "image": "roman.jpg",
   "trust": "t_roman"
  },
  "max": {
@@ -87,7 +87,7 @@ const PEOPLE={
   "future": "Вы умеете говорить «вернись» без требования быть героем.",
   "place": "Причал",
   "trait": "courage",
-  "image": "max.png",
+  "image": "max.jpg",
   "trust": "t_max"
  },
  "alex": {
@@ -126,7 +126,7 @@ const PEOPLE={
   "future": "Рядом с тобой он может молчать и оставаться понятым.",
   "place": "Пограничная станция",
   "trait": "empathy",
-  "image": "timur.png",
+  "image": "timur.jpg",
   "trust": "t_timur"
  },
  "gleb": {
@@ -165,7 +165,7 @@ const PEOPLE={
   "future": "Вы не обещаете друг другу невозможного даже в самые красивые вечера.",
   "place": "Дом переговоров",
   "trait": "empathy",
-  "image": "victor.png",
+  "image": "victor.jpg",
   "trust": "t_victor"
  },
  "matvey": {
@@ -178,7 +178,7 @@ const PEOPLE={
   "future": "У вас есть стол, за которым заботятся и о том, кто обычно заботится обо всех.",
   "place": "Пекарня",
   "trait": "empathy",
-  "image": "matvey.png",
+  "image": "matvey.jpg",
   "trust": "t_matvey"
  },
  "david": {
@@ -204,7 +204,7 @@ const PEOPLE={
   "future": "Самые важные ваши разговоры проходят без зрителей.",
   "place": "Театр",
   "trait": "empathy",
-  "image": "oscar.png",
+  "image": "oscar.jpg",
   "trust": "t_oscar"
  },
  "miron": {
@@ -217,7 +217,7 @@ const PEOPLE={
   "future": "Вы учитесь принимать неопределённость, не превращая её в холодность.",
   "place": "Обсерватория",
   "trait": "insight",
-  "image": "miron.png",
+  "image": "miron.jpg",
   "trust": "t_miron"
  },
  "egor": {
@@ -243,7 +243,7 @@ const PEOPLE={
   "future": "В вашем доме часы иногда отстают, но жизнь не откладывается до ремонта.",
   "place": "Часовая мастерская",
   "trait": "insight",
-  "image": "savva.png",
+  "image": "savva.jpg",
   "trust": "t_savva"
  },
  "yan": {
@@ -256,7 +256,7 @@ const PEOPLE={
   "future": "Он возвращается не потому, что все другие дороги закрыты.",
   "place": "Ночной вокзал",
   "trait": "courage",
-  "image": "yan.png",
+  "image": "yan.jpg",
   "trust": "t_yan"
  },
  "dmitry": {
