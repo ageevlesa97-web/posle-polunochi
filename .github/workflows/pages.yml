@@ -11,10 +11,9 @@ concurrency:
   group: github-pages
   cancel-in-progress: true
 jobs:
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  build:
+    outputs:
+      artifact_name: pages-${{ github.run_id }}-${{ github.run_attempt }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -24,5 +23,15 @@ jobs:
       - uses: actions/upload-pages-artifact@v3
         with:
           path: .
+          name: pages-${{ github.run_id }}-${{ github.run_attempt }}
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
       - id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          artifact_name: ${{ needs.build.outputs.artifact_name }}
