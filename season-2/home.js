@@ -3,7 +3,7 @@ function nav2(active){return '<nav class="nav" aria-label="Разделы игр
 const ages=[32,29,34,28,36,27,33,31,38,35,29,30,28,34,27,32,26,31,38,35,29,37,28,32,33,30,27,28,34,29,32,36,27,35,38,31,29,34,28,37,39,33,28,31,30,29,27,34,36,38,32,30,33,26,29,34,32,27,28,30,29];
 function galleryCard(h,full=false){
  const index=Number(h.id.slice(1)), age=h.age||ages[index];
- const portrait=h.image?'<img class="person-photo" src="../portraits/'+h.image+'" loading="lazy" alt="'+esc(h.name)+'">':'<div class="new-portrait" role="img" aria-label="'+esc(h.name)+'" style="background-position:'+((index%8)*100/7)+'% '+(Math.floor(index/8)*100/7)+'%"></div>';
+ const portrait=face(h);
  const bond=s?.bonds?.[h.id]||0, scenes=s?.moments?.[h.id]||[], affection=s?.affection?.[h.id]||0;
  const status=s?.hero===h.id?'Сейчас рядом':bond?'Вы знакомы':'Встреча впереди';
  const bio=h.description||'Хочет '+h.wish+'.';
