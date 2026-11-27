@@ -6,7 +6,14 @@ function galleryCard(h,full=false){
  const portrait=h.image?'<img class="person-photo" src="../portraits/'+h.image+'" loading="lazy" alt="'+esc(h.name)+'">':'<div class="new-portrait" role="img" aria-label="'+esc(h.name)+'" style="background-position:'+((index%8)*100/7)+'% '+(Math.floor(index/8)*100/7)+'%"></div>';
  const bond=s?.bonds?.[h.id]||0, scenes=s?.moments?.[h.id]||[], affection=s?.affection?.[h.id]||0;
  const status=s?.hero===h.id?'Сейчас рядом':bond?'Вы знакомы':'Встреча впереди';
- return '<article class="person-card" id="person-'+h.id+'">'+portrait+'<div class="person-content"><div class="eyebrow">'+esc(h.role)+'</div><h2>'+esc(h.name)+', '+age+'</h2><p class="muted">'+esc(h.description||'Хочет '+h.wish+'.')+'</p><div class="row metrics"><span title="Симпатия">♡ '+affection+'</span><span title="Доверие">◇ '+bond+'</span><span>Сцены '+scenes.length+'/4</span></div><p class="muted small">'+status+'</p>'+(full?'<div class="personal"><h3>Личная история</h3><p>'+esc(h.secret||profile(h))+'</p><h3>Финалы отношений</h3>'+types.map((t,i)=>'<p>'+((s?.ends||{})[h.id+':'+i]?'✓ ':'◇ ')+esc(t)+'</p>').join('')+'</div>':'<a class="profile-link" href="#hero/'+h.id+'">Открыть карточку →</a>')+(s&&s.chapter<500&&s.hero!==h.id?'<button class="secondary" data-join="'+h.id+'">Пойти вместе</button>':'')+'</div></article>'
+ const bio=h.description||'Хочет '+h.wish+'.';
+ const address='#hero/'+h.id;
+ const heading='<span class="dossier-role">'+esc(h.role)+'</span><h2>'+esc(h.name)+'</h2><span class="dossier-age">'+age+' '+(age%10===1?'год':age%10>=2&&age%10<=4?'года':'лет')+'</span>';
+ const summary='<div class="dossier-head">'+portrait+'<div>'+heading+'</div></div>';
+ const progress='<dl class="dossier-counts"><div><dt>Симпатия</dt><dd>♡ '+affection+'</dd></div><div><dt>Доверие</dt><dd>◇ '+bond+'</dd></div><div><dt>Сцены</dt><dd>'+scenes.length+' / 4</dd></div></dl>';
+ const personal=full?'<section class="dossier-story"><h3>Личная история</h3><p>'+esc(h.secret||('«Я хочу '+h.wish+'».'))+'</p><h3>Финалы отношений</h3><ul>'+types.map((t,i)=>'<li>'+((s?.ends||{})[h.id+':'+i]?'✓ ':'◇ ')+esc(t)+'</li>').join('')+'</ul></section>':'';
+ return '<article class="person-card dossier" id="person-'+h.id+'">'+(full?summary:'<a class="dossier-link" href="'+address+'">'+summary+'</a>')+'<div class="dossier-body"><p>'+esc(bio)+'</p>'+progress+'<div class="dossier-foot"><small>'+status+'</small>'+(full?'':'<a href="'+address+'">Подробнее →</a>')+'</div>'+personal+(full&&s&&s.chapter<500&&s.hero!==h.id?'<button class="secondary" data-join="'+h.id+'">Пойти вместе</button>':'')+'</div></article>';
+
 }
 function page2(tab='home'){
  shell.className=''; const slots=get(slotsKey)||[];
